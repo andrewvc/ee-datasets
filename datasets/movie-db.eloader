@@ -1,0 +1,8 @@
+TRY DELETE /movie-db
+PUT /movie-db
+{"_mapping": {"movie": {"properties": {"title": {"type": "string", "analyzer": "snowball"}, "genre": {"type": "string", "index": "not_analyzed"}, "release_year": "integer"}}}}
+BULK INDEX moviedb/movie
+{"_id": 1, "title": "Hackers", "release_year": 1995, "genre": "action"}
+{"_id": 2, "title": "Johnny Mnemonic", "release": 1995, "genre": "sci-fi"}
+{"_id": 3, "title": "Swordfish", "release_year": 2001, "genre": "action"}
+{"_id": 4, "title": "Sneakers", "release_year": 1992, "genre": "comedy"}
