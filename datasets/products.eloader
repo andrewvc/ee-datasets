@@ -1,0 +1,8 @@
+TRY DELETE /products
+PUT /products {"mappings":{"product":{"properties":{"department_id":{"type":"integer","index":"not_analyzed"},"department_name":{"type":"string","index":"not_analyzed"},"department_name_analyzed":{"type":"string","analyzer":"snowball"},"name":{"type":"string","analyzer":"snowball"},"description":{"type":"string","analyzer":"snowball"},"price":{"type":"integer","index":"not_analyzed"}}}}}
+BULK INDEX products/product
+{"department_name": "Books", "department_name_analyzed": "Books", "department_id": 1, "name": "A Fake Book on Network Routing", "description": "This is a fake book on network routing and other things. Useful as an example!"}
+{"department_name": "Books", "department_name_analyzed": "Books", "department_id": 1, "name": "Network Routing in Example Land", "description": "Another fake book about networking routing, with tons of non-existant examples!!"}
+{"department_name": "Books", "department_name_analyzed": "Books", "department_id": 1, "name": "Network Routing and the Illuminati", "description": "TCP/IP was actually part of a secret water flouridation conspiracy conducted by DARPA on behalf of the Illuminati. No, really!"}
+{"department_name": "Electronics", "department_name_analyzed": "Electronics", "department_id": 2, "name": "FooSys Wireless N Base-Station / Network Router", "description": "This home unit is a great way to connect to the internet. Wire up your next in style with this charming home network router"}
+{"department_name": "Electronics", "department_name_analyzed": "Electronics", "department_id": 2, "name": "Daffodil 48 port Switch / Network Router", "description": "48 Ports of TCP/IP routing for you network. Can be used as a simple switch as well. SNMP Support included"}
