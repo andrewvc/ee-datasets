@@ -2,5 +2,5 @@ TRY DELETE /planet
 PUT /planet {"mappings": {"hacker": {"properties": {"handle": {"type": "string"}, "hobbies": {"type": "string", "analyzer": "snowball"}}}}}
 BULK INDEX planet/hacker
 {"handle": "mark", "hobbies": ["rollerblading", "hacking", "coding"]}
-{"handle": "gondry", "hobbies": ["writing", "skateboarding"]}
+{"handle": "gondry", "hobbies": ["writing reddit comments", "skateboarding"]}
 {"handle": "jean-michel", "hobbies": ["coding", "rollerblades"]}
