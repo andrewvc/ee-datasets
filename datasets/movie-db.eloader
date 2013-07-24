@@ -1,7 +1,0 @@
-TRY DELETE /movie_db
-PUT /movie_db {"mappings": {"movie": {"properties": {"title": {"type": "string", "analyzer": "snowball"}, "actors": {"type": "string", "position_offset_gap" : 100, "analyzer": "standard"}, "genre": {"type": "string", "index": "not_analyzed"}, "release_year": {"type": "integer", "index": "not_analyzed"}, "description": {"type": "string", "analyzer": "snowball"}}}}}
-BULK INDEX movie_db/movie
-{"_id": 1, "title": "Hackers", "release_year": 1995, "genre": ["Action", "Crime", "Drama"], "actors": ["Johnny Lee Miller", "Angelina Jolie"], "description": "High-school age computer experts take on an evil corporation with their hacking skills."}
-{"_id": 2, "title": "Johnny Mnemonic", "release": 1995, "genre": ["Science Fiction", "Action"], "actors": ["Keanu Reeves", "Dolph Lundgren"], "description": "A guy with a chip in his head shouts incomprehensibly about room service in this dystopian vision of our future."}
-{"_id": 3, "title": "Swordfish", "release_year": 2001, "genre": ["Action", "Crime"], "actors": ["Jonh Travolta", "Hugh Jackman", "Halle Berry"], "description": "A cast of characters challenge society's commonly held view that computer experts are not the beautiful people. Somehow, the CIA is hacked in under 5 minutes."}
-{"_id": 4, "title": "Tomb Raider", "release_year": 2001, "genre": ["Adventure", "Action", "Fantasy"], "actors": ["Angelina Jolie", "Jon Voigt"], "description": "The story of a girl and her quest for antiquities in the face of adversity. This epic is adapter from its traditional video-game format to the big screen"}
