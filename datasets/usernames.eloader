@@ -1,5 +1,5 @@
 TRY DELETE /users
-PUT /users {"settings": {"index": {"analysis": {"tokenizer": {"customNgram": {"type": "nGram", "min_gram": 3, "max_gram": 5}}, "analyzer": {"usernameNgram": {"type": "custom", "tokenizer": "customNgram", "filter": "lowercase"}}}}}, "mappings": {"user": {"properties": {"username": {"type": "multi_field", "fields": {"exact": {"type": "string", "analyzer": "simple"}, "ngram": {"type": "string", "analyzer": "usernameNgram"}}}}, "real_name": {"type": "string", "analyzer": "whitespace"}}}}
+PUT /users {"settings": {"index": {"analysis": {"tokenizer": {"customNgram": {"type": "nGram", "min_gram": 3, "max_gram": 5}}, "analyzer": {"usernameNgram": {"type": "custom", "tokenizer": "customNgram", "filter": "lowercase"}}}}}, "mappings": {"user": {"properties": {"username": {"type": "multi_field", "fields": {"exact": {"type": "string", "analyzer": "simple"}, "ngram": {"type": "string", "analyzer": "usernameNgram"}}}, "real_name": {"type": "string", "analyzer": "whitespace"}}}}}
 BULK INDEX users/user
 {"username": "linustorvalds", "real_name": "Linus Torvalds"}
 {"username": "ltorvalds", "real_name": "Larry Torvalds"}
